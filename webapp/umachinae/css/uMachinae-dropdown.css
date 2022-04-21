@@ -1,0 +1,56 @@
+/*
+**********************************************************************
+** Copyright (c) 1988-2022 $organization$     
+**
+** This software is provided by the author and contributors ``as is'' 
+** and any express or implied warranties, including, but not limited to, 
+** the implied warranties of merchantability and fitness for a particular 
+** purpose are disclaimed. In no event shall the author or contributors 
+** be liable for any direct, indirect, incidental, special, exemplary, 
+** or consequential damages (including, but not limited to, procurement 
+** of substitute goods or services; loss of use, data, or profits; or 
+** business interruption) however caused and on any theory of liability, 
+** whether in contract, strict liability, or tort (including negligence 
+** or otherwise) arising in any way out of the use of this software, 
+** even if advised of the possibility of such damage.
+**
+**   File: uMachinae-dropdown.css
+**
+** Author: $author$           
+**   Date: 1/28/2022
+**********************************************************************
+*/
+
+/*
+** dropdown
+** ...
+*/
+.dropdown-content {
+     border-style: solid;
+     border-color: #555555;
+     border-width: 1px 3px 3px 1px;
+     border-radius: 5px 5px 5px 5px;
+     background-color: lightgrey;
+     position: absolute;
+     min-width: 160px;
+     right: 0;
+     z-index:2;
+     display: none;
+}
+.dropdown-content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     font-face: Arial;
+     font-size: 18;  
+     display: block;
+}
+.dropdown-content a:hover {
+     color: blue;
+     font-style: none;
+     text-decoration: underline;
+}
+/*
+** ...
+** dropdown
+*/

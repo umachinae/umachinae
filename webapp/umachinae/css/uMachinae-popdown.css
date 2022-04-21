@@ -1,0 +1,190 @@
+/*
+**********************************************************************
+** Copyright (c) 1988-2022 $organization$     
+**
+** This software is provided by the author and contributors ``as is'' 
+** and any express or implied warranties, including, but not limited to, 
+** the implied warranties of merchantability and fitness for a particular 
+** purpose are disclaimed. In no event shall the author or contributors 
+** be liable for any direct, indirect, incidental, special, exemplary, 
+** or consequential damages (including, but not limited to, procurement 
+** of substitute goods or services; loss of use, data, or profits; or 
+** business interruption) however caused and on any theory of liability, 
+** whether in contract, strict liability, or tort (including negligence 
+** or otherwise) arising in any way out of the use of this software, 
+** even if advised of the possibility of such damage.
+**
+**   File: uMachinae-popdown.css
+**
+** Author: $author$           
+**   Date: 1/28/2022
+**********************************************************************
+*/
+
+/*
+** popdown
+** ...
+*/
+
+/*
+** popdown-content
+** ...
+*/
+.popdown-content {
+     padding: 0px;
+     border-spacing: 0px 0px;
+     border-style: solid;
+     border-color: #555555;
+     border-width: 1px 3px 3px 1px;
+     border-radius: 5px 5px 5px 5px;
+     background-color: lightgrey;
+     position: absolute;
+     min-width: 160px;
+     right: 0;
+     z-index: 2;
+     display: none;
+ }
+.popdown-content a {
+     color: #555555;
+     padding: 12px 16px;
+     border-spacing: 0px 0px;
+     text-decoration: none;
+     font-size: 18;  
+     display: block;
+}
+.popdown-content a:hover {
+     color: blue;
+     text-decoration: underline;
+}
+/*
+** ...
+** popdown-content
+*/
+
+/*
+** popdown-logo
+** ...
+*/
+.popdown-logo {
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    background-color: lightgrey;
+    padding: 0px;
+    border-spacing: 0px 0px;
+    position: relative;
+}
+.popdown-logo-ring { 
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    background-color: grey;
+    padding: 0px;
+    border-spacing: 0px 0px;
+    border-radius: 32px;
+    cursor: pointer;
+}
+.popdown-logo-ring:hover {
+    background-color: blue;
+}
+.popdown-logo-circle { 
+    width: 56px;
+    height: 56px;
+    margin: auto;
+    background-color: black;
+    padding: 0px;
+    border-spacing: 0px 0px;
+    border-radius: 28px;
+}
+.popdown-logo-frame { 
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    background-color: grey;
+    padding: 0px;
+    border-spacing: 0px 0px;
+    border-radius: 0px;
+    cursor: pointer;
+}
+.popdown-logo-frame:hover {
+    background-color: blue;
+}
+.popdown-logo-square { 
+    width: 56px;
+    height: 56px;
+    margin: auto;
+    background-color: black;
+    padding: 0px;
+    border-spacing: 0px 0px;
+    border-radius: 0px;
+}
+.popdown-logo-background { 
+    vertical-align: center;
+}
+.popdown-logo-background-background { 
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    padding: 0px;
+    border: 0px;
+    border-style: solid;
+    border-color: grey;
+    border-spacing: 0px 0px;
+    border-radius: 18px;
+}
+.popdown-logo-icon {
+    height: 40px;
+    vertical-align: bottom;
+}
+.popdown-logo-icon-icon { 
+    width: 32px;
+    height: 32px;
+    margin: auto;
+    padding: 0px;
+    border: 0px;
+    border-style: solid;
+    border-color: grey;
+    border-spacing: 0px 0px;
+    border-radius: 8px;
+}
+.popdown-logo-icon-image {
+    background-image: url('../images/jpeg/uMachinae.jpeg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    border: 0px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 8px 8px 8px 8px;
+}
+.popdown-logo-label-label { 
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    padding: 0px;
+    border-spacing: 0px 0px;
+}
+.popdown-logo-label-text {
+    font-family: Arial;
+    font-size: 6px;
+    font-weight: bold;
+    text-align: center;
+    color: lightgrey;
+    opacity: 0;
+    transition: .5s ease;                
+}
+.popdown-logo-ring:hover .popdown-logo-label-text {
+    opacity: 1;
+}
+.popdown-logo-frame:hover .popdown-logo-label-text {
+    opacity: 1;
+}
+/*
+** ...
+** popdown-logo
+*/
+
+/*
+** ...
+** popdown
+*/
