@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2022 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: uMachinae-create-cxx-class-form.html
+===
+=== Author: $author$
+===   Date: 7/14/2022
+=====================================================================
+=== Application=uMachinae Part=create-cxx-class-form
+-->
+
+<!--
+=====================================================================
+=== form
+=====================================================================
+-->
+<form name="Form" method="POST" action="/umachinae/templates/t/cxx/class-hpp-cpp.t"
+ onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+    <div class="form">
+
+    File: <input name="File" value=""></input>[hpp][.hpp]
+    <input type="radio" name="Extension" value="hpp" checked="checked">.hpp</input>
+    <input type="radio" name="Extension" value="cpp" unchecked="checked">.cpp</input>
+    <input type="radio" name="Extension" value="hxx" unchecked="checked">.hxx</input>
+    <input type="radio" name="Extension" value="cxx" unchecked="checked">.cxx</input>
+    <input type="radio" name="Extension" value="hh" unchecked="checked">.hh</input>
+    <input type="radio" name="Extension" value="cc" unchecked="checked">.cc</input>
+    <input type="radio" name="Extension" value="mm" unchecked="checked">.mm</input>
+    <input type="radio" name="Extension" value="h" unchecked="checked">.h</input>
+    <input type="radio" name="Extension" value="c" unchecked="checked">.c</input>
+    <input type="radio" name="Extension" value="m" unchecked="checked">.m</input>
+    <input type="radio" name="Extension" value="" unchecked="">no</input>
+    <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input>
+    <br/>
+
+    Template: <select name="FormTemplate">
+    <option value="/umachinae/templates/t/cxx/class-hpp-cpp.t">c++ class (/umachinae/templates/t/cxx/class-hpp-cpp.t)</option>
+    <option value=""></option>
+    <option value="/umachinae/templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (/umachinae/templates/t/t/parameters.t)</option>
+    <option value="/umachinae/templates/t/t/functions.t">t functions &nbsp;&nbsp; (/umachinae/templates/t/t/functions.t)</option>
+    <option value=""></option>
+    <option value="/umachinae-cgi/cgi">cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgi)</option>
+    <option value="/umachinae-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgicatch)</option>
+    <option value=""/>
+    </select>
+    <br/>
+
+    <br/>
+    Copyright:<input name="Genesis" size="10" value=""/>[1988]<b></b>
+    <input type="checkbox" name="is_Genesis" value="no" unchecked="checked">no</input>
+    <b>-</b><input name="Year" size="10" value=""/>[%year()%]<b></b>
+    <input type="checkbox" name="is_Year" value="no" unchecked="checked">no</input>
+    <b>&nbsp;&nbsp;</b>Organization:<input name="Organization" value=""></input>[$organization$]
+    <input type="checkbox" name="is_Organization" value="no" unchecked="checked">no</input>
+    <input type="checkbox" name="is_Copyright" value="no" unchecked="checked">no</input>
+    <br/>
+    Author:<input name="Author" value=""></input>[$author$]
+    <input type="checkbox" name="is_Author" value="no" unchecked="checked">no</input>
+    <b>&nbsp;&nbsp;</b>Date:<input name="Date" size="10" value=""/>[%date()%]<b></b>
+    <input type="checkbox" name="is_Date" value="no" unchecked="checked">no</input>
+    <b>&nbsp;&nbsp;</b><select name="Claims">
+    <option value=""></option>
+    <option value="as_is">``as is''</option>
+    <option value=""></option>
+    </select>[``as is'']
+    <input type="checkbox" name="is_Claims" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <br/>
+    <b>#ifndef </b>
+    <input type="checkbox" name="File_ifndef_define_prefix" value="_" unchecked=""/>
+    <b>_</b><input name="File_ifndef" value=""/><b>_</b>
+    <input type="checkbox" name="File_ifndef_define_suffix" value="_" unchecked=""/>[%Namespace%]
+    <input type="checkbox" name="is_File_ifndef" value="no" unchecked=""/>no
+    <br/>
+
+    <b>#include "</b><input name="Include" value=""/><b>"</b>[xos/base/base][.%Extension%]
+    <input type="checkbox" name="is_Include" value="no" unchecked=""/>no<br/>
+    <b>#include &lt;</b><input name="Sys_include" value=""/><b>&gt;</b>[string]
+    <input type="checkbox" name="is_Sys_include" value="no" checked="checked"/>no<br/>
+    <br/>
+
+    <b>namespace</b> <input name="Namespace" value=""/>[xos] <b>{</b>
+    <input type="checkbox" name="is_Namespace" value="no" unchecked=""/>no
+    <br/>
+
+    <b>template &lt;</b> <input name="Template" value=""/><b>&gt;</b>
+    <input type="checkbox" name="is_Template" value="no" unchecked=""/>no
+    &nbsp;&nbsp;&nbsp;&nbsp;%Class%<select name="TemplateT">
+    <option value="T">T</option>
+    <option value="t" selected="selected">t</option>
+    <option value=""></option>
+    </select>
+    <input type="checkbox" name="is_TemplateT" value="no" unchecked=""/>no
+    <br/>
+
+    <b>class</b> <input name="Class" value=""/>[derived]
+    <input type="checkbox" name="is_Class" value="no" unchecked=""/>no
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>typedef </b><select name="Typedef_derives">
+    <option value="Derives">Derives</option>
+    <option value="derives" selected="selected">derives</option>
+    <option value=""></option>
+    </select><b></b>
+    <input type="checkbox" name="is_Typedef_derives" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <b>: virtual </b><select name="Implements_access">
+    <option value="public">public</option>
+    <option value="protected">protected</option>
+    <option value="private">private</option>
+    </select><input name="Implements" value=""/>[implement]
+    <input type="checkbox" name="is_Implements" value="no" unchecked=""/>no
+    <b></b>&nbsp;&nbsp;&nbsp;&nbsp;<b>typedef </b><select name="Typedef_implements">
+    <option value="Implements">Implements</option>
+    <option value="implements" selected="selected">implements</option>
+    <option value=""></option>
+    </select><b></b>
+    <input type="checkbox" name="is_Typedef_implements" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <b>, </b><select name="Extends_access">
+    <option value="public">public</option>
+    <option value="protected">protected</option>
+    <option value="private">private</option>
+    </select><input name="Extends" value=""/>[extend]
+    <input type="checkbox" name="is_Extends" value="no" unchecked=""/>no
+    <b></b>&nbsp;&nbsp;&nbsp;&nbsp;<b>typedef </b><select name="Typedef_extends">
+    <option value="Extends">Extends</option>
+    <option value="extends" selected="selected">extends</option>
+    <option value=""></option>
+    </select><b></b>
+    <input type="checkbox" name="is_Typedef_extends" value="no" unchecked="checked">no</input><b> {</b>
+    <br/>
+
+    <b></b><select name="Copy_constructor_access">
+    <option value="public">public</option>
+    <option value="protected">protected</option>
+    <option value="private">private</option>
+    </select><b>:</b>
+    <input type="checkbox" name="Copy_constructor" value="explicit" unchecked="checked"><b>explicit</b></input>
+    <b>&nbsp;&nbsp;(const &amp; </b>copy<b>):</b>
+    <input name="Copy_construct" value=""></input><b></b>
+    <input type="checkbox" name="is_Copy_construct" value="no" unchecked="checked">no</input>
+    <b>{</b>
+    <input name="Copy_constructor_body" value=""></input><b></b>
+    <input type="checkbox" name="is_Copy_constructor_body" value="no" unchecked="checked">no</input>
+    <b>}</b>
+    <input type="checkbox" name="is_Copy_constructor" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <b></b><select name="Constructor_access">
+    <option value="public">public</option>
+    <option value="protected">protected</option>
+    <option value="private">private</option>
+    </select><b>:</b>
+    <input type="checkbox" name="Constructor" value="explicit" unchecked="checked"><b>explicit</b></input>
+    <b>&nbsp;&nbsp;(</b>
+    <input name="Constructor_parameters" value=""></input><b></b>
+    <input type="checkbox" name="is_Constructor_parameters" value="no" unchecked="checked">no</input>
+    <b>):</b>
+    <input name="Construct" value=""></input><b></b>
+    <input type="checkbox" name="is_Construct" value="no" unchecked="checked">no</input>
+    <b>{</b>
+    <input name="Constructor_body" value=""></input><b></b>
+    <input type="checkbox" name="is_Constructor_body" value="no" unchecked="checked">no</input>
+    <b>}</b>
+    <input type="checkbox" name="is_Constructor" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <b></b><select name="Destructor_access">
+    <option value="public">public</option>
+    <option value="protected">protected</option>
+    <option value="private">private</option>
+    </select><b>:</b>
+    <input type="checkbox" name="Destructor" value="virtual" checked="checked"><b>virtual</b></input>
+    <b>&nbsp;&nbsp;~() {</b>
+    <input name="Dstructor_body" value=""></input><b></b>
+    <input type="checkbox" name="is_Dstructor_body" value="no" unchecked="checked">no</input>
+    <b>}</b>
+    <input type="checkbox" name="is_Destructor" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <b>}; /// class</b>
+    <br/>
+    <b>} /// namespace</b>
+    <br/>
+
+
+    <br/>
+    Content-Type: <select name="content_type">
+    <option value="text/plain">text</option>
+    <option value="text/html">html</option>
+    <option value="text/xml">xml</option>
+    <option value="application/json">json</option>
+    <option value="application/javascript">javascript</option>
+    <option value=""></option>
+    </select>
+    <br/>
+    Action: <select name="FormAction">
+    <option value="/umachinae/templates/t/cxx/class-hpp-cpp.t">c++ class (/umachinae/templates/t/cxx/class-hpp-cpp.t)</option>
+    <option value=""></option>
+    <option value="/umachinae/templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (/umachinae/templates/t/t/parameters.t)</option>
+    <option value="/umachinae/templates/t/t/functions.t">t functions &nbsp;&nbsp; (/umachinae/templates/t/t/functions.t)</option>
+    <option value=""></option>
+    <option value="/umachinae-cgi/cgi">cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgi)</option>
+    <option value="/umachinae-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgicatch)</option>
+    <option value=""/>
+    </select>
+    <br/>
+    Method: <select name="FormMethod">
+    <option value="POST">POST</option>
+    <option value="GET">GET</option>
+    <option value=""></option>
+    </select>
+    <br/>
+    <br/>
+    <input type="submit" name="submit" value="submit"/><br/>
+    </div>
+</form>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2022 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: uMachinae-create-qtcreator-form.html
+===
+=== Author: $author$
+===   Date: 7/16/2022
+=====================================================================
+=== Application=uMachinae Part=create-qtcreator-form
+-->
+
+<!--
+=====================================================================
+=== form
+=====================================================================
+-->
+<form name="Form" method="POST" action="../templates/t/QtCreator/Framework-pri.t"
+ onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+    <div class="form">
+
+    File: <input name="File" value=""></input>[{pri | pro}][.{pri | pro}]
+    <input type="radio" name="Extension" value="pri" unchecked="checked">.pri</input>
+    <input type="radio" name="Extension" value="pro" unchecked="checked">.pro</input>
+    <input type="radio" name="Extension" value="" checked="">no</input>
+    <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input>
+    <br/>
+
+    Template: <select name="FormTemplate">
+    <option value="../templates/t/QtCreator/Framework-pri.t">.QtCreator QtCreator project (../templates/t/QtCreator/Framework-pri.t)</option>
+    <option value="../templates/t/QtCreator/Framework-os-pri.t">os QtCreator .pri file (../templates/t/QtCreator/Framework-os-pri.t)</option>
+    <option value="../templates/t/QtCreator/Framework-build-pri.t">build QtCreator .pri file (../templates/t/QtCreator/Framework-build-pri.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/QtCreator/Framework-lib-pri.t">library QtCreator .pri file (../templates/t/QtCreator/Framework-lib-pri.t)</option>
+    <option value="../templates/t/QtCreator/Framework-lib-pro.t">library QtCreator .pro file (../templates/t/QtCreator/Framework-lib-pro.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/QtCreator/Framework-exe-pri.t">executable QtCreator .pri file (../templates/t/QtCreator/Framework-exe-pri.t)</option>
+    <option value="../templates/t/QtCreator/Framework-exe-pro.t">executable QtCreator .pro file (../templates/t/QtCreator/Framework-exe-pro.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/QtCreator/Framework-slib-pri.t">shared library QtCreator .pri file (../templates/t/QtCreator/Framework-slib-pri.t)</option>
+    <option value="../templates/t/QtCreator/Framework-slib-pro.t">shared library QtCreator .pro file (../templates/t/QtCreator/Framework-slib-pro.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/QtCreator/pri-pro.t">QtCreator project (../templates/t/QtCreator/pri-pro.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
+    <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
+    <option value=""></option>
+    <option value="/umachinae-cgi/cgi">cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgi)</option>
+    <option value="/umachinae-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgicatch)</option>
+    <option value=""/>
+    </select>
+    <br/>
+
+    <br/>
+    Repository: <input name="Repository" value=""></input>[umachinae]
+    <input name="is_Repository" value="no" type="checkbox" unchecked="checked">no</input>
+    Depends: <input name="Repository_depends" value="" size="30"></input>[vmachinae]
+    <input name="is_Repository_depends" value="no" type="checkbox" unchecked="checked">no</input>
+    <br/>
+    Framework: <input name="Framework" value=""></input>[umachinae]
+    <input name="is_Framework" value="no" type="checkbox" unchecked="checked">no</input>
+    Depends: <input name="Depends" value="" size="30"></input>[ubn;ump;urostra;unadir;ufila;ucrono;ucifra;urete;ustara;utalas]
+    <input name="is_Depends" value="no" type="checkbox" unchecked="checked">no</input>
+    <br/>
+    Target: <input name="Target" value=""></input>[%Framework%]<input type="checkbox" name="HasExe" value="yes" unchecked="yes"/>_exe
+    <input name="is_Target" value="no" type="checkbox" unchecked="checked">no</input>
+    <br/>
+    <b>namespace </b><input name="Target_namespace" value=""></input>[<input name="Source_framework" value=""></input>[xos]<b></b>
+    <b></b><input type="checkbox" name="is_Source_framework" value="no" unchecked="checked">no</input> /{ lib/%Framework% | app/console/%Framework% }]<b></b>
+    <b></b><input type="checkbox" name="is_Target_namespace" value="no" unchecked="checked">no</input> <b>{...}</b>
+    <br/>
+    <b>class </b><input name="Target_class" value=""></input>[{ version | main }]<b></b>
+    <b></b><input type="checkbox" name="is_Target_class" value="no" unchecked="checked">no</input> <b>{...}</b>
+    <br/>
+    
+    <br/>
+    Source: <select name="Source">
+    <option value="source">source</option>
+    <option value="src">src</option>
+    <option value=""></option>
+    </select>[source]
+    <input name="is_Source" value="no" type="checkbox" unchecked="checked">no</input>
+    <br/>
+    Include: <select name="Include">
+    <option value="include">include</option>
+    <option value="inc">inc</option>
+    <option value=""></option>
+    </select>[include]
+    <input name="is_Include" value="no" type="checkbox" unchecked="checked">no</input>
+    <br/>
+    Os: <input name="Os" value=""/><select name="Os2">
+    <option value=""></option>
+    <option value="Linux">Linux</option>
+    <option value="MacOSX">MacOSX</option>
+    <option value="Windows">Windows</option>
+    </select> [Linux] <input type="checkbox" name="is_Os" value="no" checked="checked">no</input>
+    <br/>
+    Uname: <input name="Uname" value=""/><select name="Uname2">
+    <option value=""></option>
+    <option value="Linux">Linux</option>
+    <option value="Darwin">Darwin</option>
+    <option value="Windows">Windows</option>
+    </select> [$$system(uname)] <input type="checkbox" name="is_Uname" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <br/>
+    Copyright:<input name="Genesis" size="10" value=""/>[1988]<b></b>
+    <input type="checkbox" name="is_Genesis" value="no" unchecked="checked">no</input>
+    <b>-</b><input name="Year" size="10" value=""/>[%year()%]<b></b>
+    <input type="checkbox" name="is_Year" value="no" unchecked="checked">no</input>
+    <b>&nbsp;&nbsp;</b>Organization:<input name="Organization" value=""></input>[$organization$]
+    <input type="checkbox" name="is_Organization" value="no" unchecked="checked">no</input>
+    <input type="checkbox" name="is_Copyright" value="no" unchecked="checked">no</input>
+    <br/>
+    Author:<input name="Author" value=""></input>[$author$]
+    <input type="checkbox" name="is_Author" value="no" unchecked="checked">no</input>
+    <b>&nbsp;&nbsp;</b>Date:<input name="Date" size="10" value=""/>[%date()%]<b></b>
+    <input type="checkbox" name="is_Date" value="no" unchecked="checked">no</input>
+    <b>&nbsp;&nbsp;</b><select name="Claims">
+    <option value=""></option>
+    <option value="as_is">``as is''</option>
+    <option value=""></option>
+    </select>[``as is'']
+    <input type="checkbox" name="is_Claims" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <br/>
+    Content-Type: <select name="content_type">
+    <option value="text/plain">text</option>
+    <option value="text/html">html</option>
+    <option value="text/xml">xml</option>
+    <option value="application/json">json</option>
+    <option value="application/javascript">javascript</option>
+    <option value=""></option>
+    </select>
+    <br/>
+    Action: <select name="FormAction">
+    <option value="../templates/t/QtCreator/Framework-pri.t">.QtCreator QtCreator project (../templates/t/QtCreator/Framework-pri.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
+    <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
+    <option value=""></option>
+    <option value="/umachinae-cgi/cgi">cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgi)</option>
+    <option value="/umachinae-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgicatch)</option>
+    <option value=""/>
+    </select>
+    <br/>
+    Method: <select name="FormMethod">
+    <option value="POST">POST</option>
+    <option value="GET">GET</option>
+    <option value=""></option>
+    </select>
+    <br/>
+    <br/>
+    <input type="submit" name="submit" value="submit"/><br/>
+    </div>
+</form>

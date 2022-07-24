@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2022 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: uMachinae-create-vstudio-form.html
+===
+=== Author: $author$
+===   Date: 7/17/2022
+=====================================================================
+=== Application=uMachinae Part=create-vstudio-form
+-->
+
+<!--
+=====================================================================
+=== form
+=====================================================================
+-->
+<form name="Form" method="POST" action="../templates/t/VisualStudio/vstudio-vcproj.t"
+ onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+    <div class="form">
+
+    File: <input name="File" value=""></input>[{sln | ...}][{.sln | ...}]
+    <input type="radio" name="Extension" value="sln" unchecked="checked">.sln</input>
+    <input type="radio" name="Extension" value="vcproj" unchecked="checked">.vcproj</input>
+    <input type="radio" name="Extension" value="vsprops" unchecked="checked">.vsprops</input>
+    <input type="radio" name="Extension" value="vcxproj" unchecked="checked">.vcxproj</input>
+    <input type="radio" name="Extension" value="props" unchecked="checked">.props</input>
+    <input type="radio" name="Extension" value="" checked="checked">no</input>
+    <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input>
+    <br/>
+
+    Template: <select name="FormTemplate">
+    <option value="../templates/t/VisualStudio/vstudio-sln.t">VisualStudio Solution (2005..) -- .sln &nbsp;&nbsp; (../templates/t/VisualStudio/vstudio-sln.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/VisualStudio/vstudio-vcproj.t">VisualStudio Project (2005..2008) -- .vcproj &nbsp;&nbsp; (../templates/t/VisualStudio/vstudio-vcproj.t)</option>
+    <option value="../templates/t/VisualStudio/vsprops-vsprops.t" selected="selected">VisualStudio Properties (2005..2008) -- .vsprops &nbsp;&nbsp; (../templates/t/VisualStudio/vsprops-vsprops.t)</option>
+    <option value="../templates/t/VisualStudio/vcproj-vsprops.t">VisualStudio Common Properties (2005..2008) -- vcproj.vsprops &nbsp;&nbsp; (../templates/t/VisualStudio/vcproj-vsprops.t)</option>
+    <option value="../templates/t/VisualStudio/vcversion-vsprops.t">VisualStudio VCVersion Properties (2005..2008) -- vcversion.vsprops &nbsp;&nbsp; (../templates/t/VisualStudio/vcversion-vsprops.t)</option>
+    <option value="../templates/t/VisualStudio/windows-vsprops.t">VisualStudio Windows Properties (2005..2008) -- windows.vsprops &nbsp;&nbsp; (../templates/t/VisualStudio/windows-vsprops.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/VisualStudio/vstudio-vcxproj.t">VisualStudio Project (2010..) -- .vcxproj &nbsp;&nbsp; (../templates/t/VisualStudio/vstudio-vcxproj.t)</option>
+    <option value="../templates/t/VisualStudio/props-props.t">VisualStudio Properties (2010..) -- .props &nbsp;&nbsp; (./templates/t/VisualStudio/props-props.t)</option>
+    <option value="../templates/t/VisualStudio/vcxproj-props.t">VisualStudio Common Properties (2010..) -- vcxproj.props &nbsp;&nbsp; (../templates/t/VisualStudio/vcxproj-props.t)</option>
+    <option value="../templates/t/VisualStudio/vcxversion-props.t">VisualStudio VCXVersion Properties (2010..) -- vcxversion.props &nbsp;&nbsp; (../templates/t/VisualStudio/vcxversion-props.t)</option>
+    <option value="../templates/t/VisualStudio/windows-props.t">VisualStudio Windows Properties (2010..) -- windows.props &nbsp;&nbsp; (../templates/t/VisualStudio/windows-props.t)</option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
+    <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
+    <option value=""></option>
+    <option value="/umachinae-cgi/cgi">cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgi)</option>
+    <option value="/umachinae-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgicatch)</option>
+    <option value=""/>
+    </select>
+    <br/>
+
+    <b></b>VCVersion:<select name="VCVersion">
+    <option value=""></option>
+    <option value="vc7">VisualStudio 2002 (vc7) (1300)</option>
+    <option value="vc7.1">VisualStudio 2003 (vc7.1) (1310)</option>
+    <option value="vc8">VisualStudio 2005 (vc8) (1400)</option>
+    <option value="vc9" selected="selected">VisualStudio 2008 (vc9) (1500)</option>
+    <option value=""></option>
+    </select><b></b>
+    <input type="checkbox" name="is_VCVersion" value="no" unchecked="checked">no</input>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <b></b>VCXVersion:<select name="VCXVersion">
+    <option value=""></option>
+    <option value="vc10" selected="selected">VisualStudio 2010 (vc10) (1600)</option>
+    <option value="vc11">VisualStudio 2012 (vc11) (1700)</option>
+    <option value="vc12">VisualStudio 2013 (vc12) (1800)</option>
+    <option value="vc14">VisualStudio 2015 (vc14) (1900)</option>
+    <option value="vc15">VisualStudio 2017 (vc15) (1910)</option>
+    <option value="vc16">VisualStudio 2019 (vc16) (1920)</option>
+    <option value=""></option>
+    </select><b></b>
+    <input type="checkbox" name="is_VCXVersion" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <br/>
+    Repository: <input name="Repository" value=""></input>[umachinae]
+    <input name="is_Repository" value="no" type="checkbox" unchecked="checked">no</input>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Depends: <input name="Repository_depends" value="" size="30"></input>[vmachinae]
+    <input name="is_Repository_depends" value="no" type="checkbox" checked="checked">no</input>
+    <br/>
+    <b></b>Framework:<input name="Framework" value=""/><b></b>[umachinae]
+    <input type="checkbox" name="is_Framework" value="no" unchecked="checked">no</input>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <b></b>Depends:<input name="Depends" value=""/><b></b>[ubn;ump;urostra;unadir;ufila;ucrono;ucifra;urete;ustara;utalas]
+    <input type="checkbox" name="is_Depends" value="no" checked="checked">no</input>
+    <br/>
+
+    <br/>
+    Source: <select name="Source">
+    <option value="source">source</option>
+    <option value="src">src</option>
+    <option value=""></option>
+    </select>[source]
+    <input name="is_Source" value="no" type="checkbox" unchecked="checked">no</input>
+    Build: <select name="Build">
+    <option value="build">build</option>
+    <option value="bld">bld</option>
+    <option value=""></option>
+    </select>[build]
+    <input name="is_Build" value="no" type="checkbox" unchecked="checked">no</input>
+    <b></b>Apps:<input name="Apps" value=""></input><b>;...</b>[]
+    <input type="checkbox" name="is_Apps" value="no" unchecked="checked">no</input><br/>
+
+    <br/>
+    <b>&lt;UserMacro Name=&quot;</b><input name="UserMacro" value=""/>=Value<b>&quot;&gt;;...</b>[]
+    <input type="checkbox" name="is_UserMacro" value="no" checked="checked">no</input><br/>
+    <br/>
+    <b>&lt;UserMacro Name=&quot;REPO_DIR&quot; Value=&quot;</b><input name="REPO_DIR" value="../../../../../.."></input><b>;...&quot;&gt;</b>[]
+    <input type="checkbox" name="is_REPO_DIR" value="no" unchecked="checked">no</input><br/>
+    <b>&lt;UserMacro Name=&quot;ROSTRA_SOURCE_DIR&quot; Value=&quot;</b><input name="ROSTRA_SOURCE_DIR" value="$(REPO_DIR)/rostra/source"></input><b>;...&quot;&gt;</b>[]
+    <input type="checkbox" name="is_ROSTRA_SOURCE_DIR" value="no" unchecked="checked">no</input><br/>
+    <b>&lt;UserMacro Name=&quot;NADIR_SOURCE_DIR&quot; Value=&quot;</b><input name="NADIR_SOURCE_DIR" value="$(REPO_DIR)/nadir/source"></input><b>;...&quot;&gt;</b>[]
+    <input type="checkbox" name="NADIR_SOURCE_DIR" value="no" unchecked="checked">no</input><br/>
+    <br/>
+    <b>&lt;UserMacro Name=&quot;WINDOWS_DEFINES&quot; Value=&quot;</b><input name="DEFINES" value="WINSOCK_2;DEFAULT_LOGGING_LEVELS_ERROR;XOS_CONSOLE_MAIN_MAIN"></input><b>;...&quot;&gt;</b>[]
+    <input type="checkbox" name="is_DEFINES" value="no" unchecked="checked">no</input><br/>
+    <b>&lt;UserMacro Name=&quot;WINDOWS_INCLUDE_DIRS&quot; Value=&quot;</b><input name="INCLUDE_DIRS" value="$(NADIR_SOURCE_DIR)/thirdparty/gnu/getopt;$(ROSTRA_SOURCE_DIR)/xos/platform/microsoft/windows/posix"></input><b>;...&quot;&gt;</b>[]
+    <input type="checkbox" name="is_INCLUDE_DIRS" value="no" unchecked="checked">no</input><br/>
+    <b>&lt;UserMacro Name=&quot;WINDOWS_LIB_DIRS&quot; Value=&quot;</b><input name="LIB_DIRS" value=""></input><b>;...&quot;&gt;</b>[]
+    <input type="checkbox" name="is_LIB_DIRS" value="no" unchecked="checked">no</input><br/>
+    <b>&lt;UserMacro Name=&quot;WINDOWS_LIBS&quot; Value=&quot;</b><input name="LIBS" value="Ws2_32.lib"></input><b>;...&quot;&gt;</b>[]
+    <input type="checkbox" name="is_LIBS" value="no" unchecked="checked">no</input><br/>
+
+    <br/>
+    Copyright:<input name="Genesis" size="10" value=""/>[1988]<b></b>
+    <input type="checkbox" name="is_Genesis" value="no" unchecked="checked">no</input>
+    <b>-</b><input name="Year" size="10" value=""/>[%year()%]<b></b>
+    <input type="checkbox" name="is_Year" value="no" unchecked="checked">no</input>
+    <b>&nbsp;&nbsp;</b>Organization:<input name="Organization" value=""></input>[$organization$]
+    <input type="checkbox" name="is_Organization" value="no" unchecked="checked">no</input>
+    <input type="checkbox" name="is_Copyright" value="no" unchecked="checked">no</input>
+    <br/>
+    Author:<input name="Author" value=""></input>[$author$]
+    <input type="checkbox" name="is_Author" value="no" unchecked="checked">no</input>
+    <b>&nbsp;&nbsp;</b>Date:<input name="Date" size="10" value=""/>[%date()%]<b></b>
+    <input type="checkbox" name="is_Date" value="no" unchecked="checked">no</input>
+    <b>&nbsp;&nbsp;</b><select name="Claims">
+    <option value=""></option>
+    <option value="as_is">``as is''</option>
+    <option value=""></option>
+    </select>[``as is'']
+    <input type="checkbox" name="is_Claims" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <br/>
+    Content-Type: <select name="content_type">
+    <option value="text/plain">text</option>
+    <option value="text/html">html</option>
+    <option value="text/xml">xml</option>
+    <option value="application/json">json</option>
+    <option value="application/javascript">javascript</option>
+    <option value=""></option>
+    </select>
+    <br/>
+    Action: <select name="FormAction">
+    <option value="../templates/t/VisualStudio/vstudio-vcproj.t">.VStudio VStudio project (../templates/t/VisualStudio/vstudio-sln.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
+    <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
+    <option value=""></option>
+    <option value="/umachinae-cgi/cgi">cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgi)</option>
+    <option value="/umachinae-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/umachinae-cgi/cgicatch)</option>
+    <option value=""/>
+    </select>
+    <br/>
+    Method: <select name="FormMethod">
+    <option value="POST">POST</option>
+    <option value="GET">GET</option>
+    <option value=""></option>
+    </select>
+    <br/>
+    <br/>
+    <input type="submit" name="submit" value="submit"/><br/>
+    </div>
+</form>
